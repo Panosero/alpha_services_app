@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Property Services - Elite Handyman Services</title>
+    <meta name="description" content="Friendly, reliable handyman services in Paphos. Electrical, carpentry, finishes, networking & smart home. Call +357 99 115 960 for a free quote.">
+    <meta name="theme-color" content="#ff4444">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alpha Property Services – Handyman in Paphos">
+    <meta property="og:description" content="Friendly, reliable handyman services in Paphos. Electrical, carpentry, finishes, networking & smart home.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="static/alex_photo.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alpha Property Services – Handyman in Paphos">
+    <meta name="twitter:description" content="Friendly, reliable handyman services in Paphos. Electrical, carpentry, finishes, networking & smart home.">
+    <meta name="twitter:image" content="static/alex_photo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -289,6 +301,117 @@
             left: 0;
             color: var(--accent);
             font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        .testimonial-text { color: rgba(255,255,255,0.85); font-size: 1rem; }
+        .testimonial-author { margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+        /* Why choose us & process */
+        .trust-process {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .trust-grid, .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .pill-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+        }
+        .pill-card h4 { margin-bottom: 0.5rem; }
+        .pill-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+        /* About photo */
+        .about-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            filter: saturate(1.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Contact form */
+        .quote-form {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-align: left;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-size: 0.95rem; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.06);
+            color: white;
+            font: inherit;
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-actions { display: flex; gap: 1rem; align-items: center; }
+        .helper-text { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        /* Sticky mobile action bar */
+        .sticky-action-bar {
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            display: none;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(10,10,10,0.9);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1001;
+        }
+        .sticky-action-bar a { flex: 1; text-align: center; border-radius: 12px; padding: 0.9rem 1rem; }
+        .btn-whatsapp { background: #25D366; color: #0a0a0a; font-weight: 700; }
+        .btn-call { background: var(--accent); color: white; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .sticky-action-bar { display: flex; }
+            body { padding-bottom: 70px; }
+        }
+
+        /* Focus visibility */
+        :focus-visible { outline: 2px solid #ff7744; outline-offset: 3px; border-radius: 6px; }
+        .btn:focus-visible, .contact-link:focus-visible, .nav-links a:focus-visible { outline-color: #fff; box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.4); }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
         }
 
         /* About Section */
@@ -589,6 +712,8 @@
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#services">SERVICES</a></li>
                 <li><a href="#about">ABOUT</a></li>
+                <li><a href="#testimonials">REVIEWS</a></li>
+                <li><a href="#why">WHY US</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
@@ -597,7 +722,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>ALPHA PROPERTY<br>SERVICES</h1>
-            <p class="hero-subtitle">Elite handyman services. Modern solutions. Exceptional results.</p>
+            <p class="hero-subtitle">Professional handyman services for homes, rentals, and small businesses in Paphos.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">GET STARTED</a>
                 <a href="#services" class="btn btn-secondary">VIEW SERVICES</a>
@@ -704,7 +829,7 @@
     <section id="about" class="about">
         <div class="about-content animate-on-scroll">
             <h2>Meet Alex</h2>
-            <p>Professional craftsman with 10+ years of experience, specializing in modern home solutions and cutting-edge techniques. Reliable, trustworthy, and committed to exceeding expectations.</p>
+            <p>Hi, I'm Alex. I support homeowners, landlords, and small businesses across the Paphos area with reliable, high‑quality repairs and upgrades. Professional craftsman with 10+ years of experience, specializing in modern property solutions and cutting‑edge techniques. Reliable, trustworthy, and committed to exceeding expectations.</p>
             <p>From smart home installations to custom carpentry, I bring innovation and precision to every project. My approach combines traditional craftsmanship with modern technology.</p>
             
             <div class="stats">
@@ -723,7 +848,41 @@
             </div>
         </div>
         <div class="about-image animate-on-scroll">
-            <div class="image-placeholder">👨‍🔧</div>
+            <img src="static/alex_photo.png" alt="Alex from Alpha Property Services at work in Paphos" class="about-photo" loading="lazy">
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title animate-on-scroll">WHAT CLIENTS SAY</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">“Alex was on time, tidy, and the quality was excellent. Our lighting and Wi‑Fi have never worked better.”</p>
+                <p class="testimonial-author">Homeowner, Coral Bay</p>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">“Fast response and clear pricing. He fixed the issue and suggested smart upgrades that actually saved us money.”</p>
+                <p class="testimonial-author">Landlord, Geroskipou</p>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">“Professional and easy to work with. Set up our small office network and it’s been rock solid.”</p>
+                <p class="testimonial-author">Business Owner, Paphos</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="trust-process">
+        <h2 class="section-title animate-on-scroll">WHY CHOOSE ALPHA</h2>
+        <div class="trust-grid">
+            <div class="pill-card animate-on-scroll"><h4>On-time & tidy</h4><p>Respect for your time and home, with clean finishes.</p></div>
+            <div class="pill-card animate-on-scroll"><h4>Clear communication</h4><p>Straightforward advice and transparent pricing.</p></div>
+            <div class="pill-card animate-on-scroll"><h4>Workmanship guarantee</h4><p>Follow-up support and fixes if anything’s not right.</p></div>
+            <div class="pill-card animate-on-scroll"><h4>Local & responsive</h4><p>Serving Paphos, Peyia, Coral Bay, Kissonerga, Geroskipou.</p></div>
+        </div>
+        <h2 class="section-title animate-on-scroll" style="margin-top:4rem; font-size: clamp(2rem,5vw,3rem);">HOW IT WORKS</h2>
+        <div class="process-grid">
+            <div class="pill-card animate-on-scroll"><h4>1) Call or message</h4><p>Share your job and photos if helpful.</p></div>
+            <div class="pill-card animate-on-scroll"><h4>2) Free quote</h4><p>Clear scope, fair pricing, and a time that suits you.</p></div>
+            <div class="pill-card animate-on-scroll"><h4>3) Job done</h4><p>Quality results, no mess, no surprises.</p></div>
         </div>
     </section>
 
@@ -742,17 +901,71 @@
                 <h3>Email</h3>
                 <p><a href="mailto:alphaproperty.services@hotmail.com" class="contact-link">alphaproperty.services@hotmail.com</a></p>
             </div>
+
+            <div class="contact-card animate-on-scroll">
+                <span class="contact-icon">💬</span>
+                <h3>WhatsApp</h3>
+                <p><a class="contact-link" href="https://wa.me/35799115960?text=Hi%20Alex%2C%20I%27d%20like%20a%20quote%20for..." target="_blank" rel="noopener">Message on WhatsApp</a></p>
+            </div>
             
             <div class="contact-card animate-on-scroll">
                 <span class="contact-icon">📍</span>
                 <h3>Service Area</h3>
                 <p>Paphos area</p>
             </div>
+
+            <div class="contact-card animate-on-scroll">
+                <span class="contact-icon">⏰</span>
+                <h3>Business Hours</h3>
+                <p>Mon–Sat: 8:00–18:00<br>Sun: By appointment</p>
+            </div>
         </div>
 
         <div class="animate-on-scroll">
             <a href="tel:+35799115960" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">START YOUR PROJECT</a>
         </div>
+
+        <form id="quote-form" class="quote-form animate-on-scroll" aria-labelledby="quote-form-title">
+            <h3 id="quote-form-title" style="margin-bottom: 1rem;">Request a Free Quote</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email (optional)</label>
+                    <input id="email" name="email" type="email" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option>Electrical</option>
+                        <option>Plumbing</option>
+                        <option>Carpentry</option>
+                        <option>Finishes</option>
+                        <option>Tech Integration</option>
+                        <option>Network & IT</option>
+                        <option>Maintenance</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me a bit about the job"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send Request</button>
+                <span class="helper-text">You can also call or WhatsApp for a faster response.</span>
+            </div>
+        </form>
     </section>
 
     <footer>
@@ -767,46 +980,50 @@
         </div>
     </footer>
 
+    <!-- Sticky mobile action bar -->
+    <div class="sticky-action-bar" aria-label="Quick actions">
+        <a href="tel:+35799115960" class="btn btn-call" aria-label="Call Alex">📞 Call</a>
+        <a href="https://wa.me/35799115960?text=Hi%20Alex%2C%20I%27d%20like%20a%20quote%20for..." target="_blank" rel="noopener" class="btn btn-whatsapp" aria-label="Message Alex on WhatsApp">💬 WhatsApp</a>
+    </div>
+
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Smooth scrolling (respect reduced motion)
+        if (!reduceMotion) {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
             });
-        });
+        }
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Scroll animations (respect reduced motion)
+        if (!reduceMotion) {
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate'); });
+            }, observerOptions);
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        } else {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('animate'));
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
+        // Parallax effect for background (respect reduced motion)
+        if (!reduceMotion) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                document.querySelector('.bg-animation').style.transform = `translateY(${rate}px)`;
             });
-        }, observerOptions);
-
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            document.querySelector('.bg-animation').style.transform = `translateY(${rate}px)`;
-        });
+        }
 
         // Add stagger delay to service cards
         document.querySelectorAll('.service-card').forEach((card, index) => {
@@ -822,6 +1039,49 @@
                 nav.style.background = 'rgba(10, 10, 10, 0.8)';
             }
         });
+
+        // Quote form -> open email client via mailto (vanilla JS)
+        const quoteForm = document.getElementById('quote-form');
+        if (quoteForm) {
+            const getVal = (id) => {
+                const el = document.getElementById(id);
+                return el && typeof el.value !== 'undefined' ? String(el.value).trim() : '';
+            };
+            quoteForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = getVal('name');
+                const phone = getVal('phone');
+                const email = getVal('email');
+                const service = getVal('service') || 'Service';
+                const message = getVal('message');
+
+                const subject = encodeURIComponent(`Quote request: ${service}`);
+                const body = encodeURIComponent(
+`Name: ${name}
+Phone: ${phone}
+Email: ${email || '-'}
+Service: ${service}
+Message: ${message}`);
+
+                window.location.href = `mailto:alphaproperty.services@hotmail.com?subject=${subject}&body=${body}`;
+            });
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Alpha Property Services",
+      "image": "static/alex_photo.png",
+      "telephone": "+357 99 115 960",
+      "email": "alphaproperty.services@hotmail.com",
+      "areaServed": "Paphos, Cyprus",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paphos",
+        "addressCountry": "CY"
+      }
+    }
     </script>
 </body>
 </html>
