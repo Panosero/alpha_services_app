@@ -16,6 +16,12 @@
     <meta name="twitter:title" content="Alpha Property Services – Handyman in Paphos">
     <meta name="twitter:description" content="Friendly, reliable handyman services in Paphos. Electrical, carpentry, finishes, networking & smart home.">
     <meta name="twitter:image" content="static/alex_photo.png">
+    <meta property="og:site_name" content="Alpha Property Services">
+    <!-- TODO: Set canonical and og:url after deploying to your domain -->
+    <!-- <link rel="canonical" href="https://your-domain.example/"> -->
+    <!-- <meta property="og:url" content="https://your-domain.example/"> -->
+    <link rel="icon" href="static/alex_photo.png">
+    <link rel="apple-touch-icon" href="static/alex_photo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -538,6 +544,10 @@
             display: inline-block;
             margin: -0.5rem -1rem;
             position: relative;
+            /* Prevent long emails/URLs from overflowing */
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
         }
 
         .contact-link:hover {
@@ -724,7 +734,7 @@
             <h1>ALPHA PROPERTY<br>SERVICES</h1>
             <p class="hero-subtitle">Professional handyman services for homes, rentals, and small businesses in Paphos.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">GET STARTED</a>
+                <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
                 <a href="#services" class="btn btn-secondary">VIEW SERVICES</a>
             </div>
         </div>
@@ -842,8 +852,8 @@
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Satisfaction Rate</span>
+                    <span class="stat-number">✔</span>
+                    <span class="stat-label">Satisfaction Guarantee</span>
                 </div>
             </div>
         </div>
@@ -856,16 +866,16 @@
         <h2 class="section-title animate-on-scroll">WHAT CLIENTS SAY</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card animate-on-scroll">
-                <p class="testimonial-text">“Alex was on time, tidy, and the quality was excellent. Our lighting and Wi‑Fi have never worked better.”</p>
-                <p class="testimonial-author">Homeowner, Coral Bay</p>
+                <p class="testimonial-text">“On time, tidy, and great quality. He fixed our lighting and improved the Wi‑Fi coverage in one visit.”</p>
+                <p class="testimonial-author">— Christos P.</p>
             </div>
             <div class="testimonial-card animate-on-scroll">
-                <p class="testimonial-text">“Fast response and clear pricing. He fixed the issue and suggested smart upgrades that actually saved us money.”</p>
-                <p class="testimonial-author">Landlord, Geroskipou</p>
+                <p class="testimonial-text">“Fast response with clear pricing. Issue solved and helpful advice on upgrades that saved us money.”</p>
+                <p class="testimonial-author">— George E.</p>
             </div>
             <div class="testimonial-card animate-on-scroll">
-                <p class="testimonial-text">“Professional and easy to work with. Set up our small office network and it’s been rock solid.”</p>
-                <p class="testimonial-author">Business Owner, Paphos</p>
+                <p class="testimonial-text">“Professional and easy to work with. Set up our home network and everything just works now.”</p>
+                <p class="testimonial-author">— Maria A.</p>
             </div>
         </div>
     </section>
@@ -893,7 +903,7 @@
             <div class="contact-card animate-on-scroll">
                 <span class="contact-icon">📞</span>
                 <h3>Call Direct</h3>
-                <p><a href="tel:+35799115960" class="contact-link">99115960</a></p>
+                <p><a href="tel:+35799115960" class="contact-link">+357 99 115 960</a></p>
             </div>
             
             <div class="contact-card animate-on-scroll">
@@ -974,6 +984,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#why">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <p class="copyright">&copy; 2024 Alpha Property Services - Elite Handyman Services</p>
@@ -1068,14 +1080,18 @@ Message: ${message}`);
         }
     </script>
     <script type="application/ld+json">
-    {
+        {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Alpha Property Services",
       "image": "static/alex_photo.png",
-      "telephone": "+357 99 115 960",
+            "telephone": "+357 99 115 960",
       "email": "alphaproperty.services@hotmail.com",
-      "areaServed": "Paphos, Cyprus",
+            "areaServed": ["Paphos", "Peyia", "Coral Bay", "Kissonerga", "Geroskipou"],
+            "openingHoursSpecification": [
+                {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "18:00"},
+                {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "00:00", "closes": "00:00", "description": "By appointment"}
+            ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Paphos",
